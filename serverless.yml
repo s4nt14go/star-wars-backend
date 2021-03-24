@@ -41,3 +41,6 @@ functions:
 
   people:
     handler: functions/people.handler
+
+  search:
+    handler: functions/search.handler

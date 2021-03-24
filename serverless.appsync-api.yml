@@ -12,6 +12,11 @@ mappingTemplates:
     dataSource: peopleFunction
     request: false
     response: false
+  - type: Query
+    field: search
+    dataSource: searchFunction
+    request: false
+    response: false
 
 dataSources:
   - type: AWS_LAMBDA
@@ -22,3 +27,7 @@ dataSources:
     name: peopleFunction
     config:
       functionName: people
+  - type: AWS_LAMBDA
+    name: searchFunction
+    config:
+      functionName: search
