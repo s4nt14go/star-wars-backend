@@ -4,4 +4,20 @@ schema {
 
 type Query {
     echo(arg1: String!): String!
+    people(page: String): PeoplePage
+}
+
+type PeoplePage {
+    people: [Person]
+    next: String
+    previous: String
+    count: Int
+}
+
+type Person {
+    name: String
+    height: String
+    mass: String
+    gender: String
+    homeworld: String
 }

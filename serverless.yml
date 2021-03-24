@@ -38,3 +38,6 @@ functions:
 
   echo:
     handler: functions/echo.handler
+
+  people:
+    handler: functions/people.handler
