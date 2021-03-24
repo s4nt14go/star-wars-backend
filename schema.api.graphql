@@ -1,0 +1,7 @@
+schema {
+    query: Query
+}
+
+type Query {
+    echo(arg1: String!): String!
+}

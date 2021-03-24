@@ -1,0 +1,15 @@
+name: star-wars-api
+schema: schema.api.graphql
+authenticationType: API_KEY
+mappingTemplates:
+  - type: Query
+    field: echo
+    dataSource: echoFunction
+    request: false
+    response: false
+
+dataSources:
+  - type: AWS_LAMBDA
+    name: echoFunction
+    config:
+      functionName: echo
