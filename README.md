@@ -15,4 +15,4 @@ AWS serverless:
 CI/CD:
 * GitHub Actions
 
-> The frontend is in this [other repo](https://github.com/s4nt14go/star-wars-frontend) and this is the [demo link]
+> The frontend is in this [other repo](https://github.com/s4nt14go/star-wars-frontend) and this is the [demo link](https://prod--s4nt14go-star-wars.netlify.app)
