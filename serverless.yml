@@ -41,6 +41,8 @@ functions:
 
   people:
     handler: functions/people.handler
+    timeout: 15
 
   search:
     handler: functions/search.handler
+    timeout: 15
