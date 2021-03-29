@@ -4,7 +4,8 @@
   "description": "A TypeScript starter for Serverless Framework",
   "main": "handler.js",
   "scripts": {
-    "test": "serverless-bundle test"
+    "test": "serverless-bundle test",
+    "sls": "sls"
   },
   "author": "",
   "license": "MIT",
