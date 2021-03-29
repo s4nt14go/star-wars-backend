@@ -3,7 +3,6 @@ schema {
 }
 
 type Query {
-    echo(arg1: String!): String!
     people(page: String): PeoplePage
     search(name: String!, page: String): PeoplePage
 }

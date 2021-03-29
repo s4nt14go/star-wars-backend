@@ -29,16 +29,6 @@ custom:
     - ${file(serverless.appsync-api.yml)}
 
 functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: hello
-          method: get
-
-  echo:
-    handler: functions/echo.handler
-
   people:
     handler: functions/people.handler
     timeout: 15

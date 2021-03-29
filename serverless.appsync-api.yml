@@ -3,11 +3,6 @@ schema: schema.api.graphql
 authenticationType: API_KEY
 mappingTemplates:
   - type: Query
-    field: echo
-    dataSource: echoFunction
-    request: false
-    response: false
-  - type: Query
     field: people
     dataSource: peopleFunction
     request: false
@@ -19,10 +14,6 @@ mappingTemplates:
     response: false
 
 dataSources:
-  - type: AWS_LAMBDA
-    name: echoFunction
-    config:
-      functionName: echo
   - type: AWS_LAMBDA
     name: peopleFunction
     config:
