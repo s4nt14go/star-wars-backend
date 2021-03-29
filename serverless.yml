@@ -1,5 +1,5 @@
 # NOTE: update this with your service name
-service: star-wars
+service: star-wars-backend
 
 # Create an optimized package for our functions
 package:
