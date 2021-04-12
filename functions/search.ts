@@ -1,7 +1,8 @@
 import { AppSyncResolverHandler } from "aws-lambda";
 import axios from 'axios'
+import wrapper from "./lib/wrapper";
 
-export const handler: AppSyncResolverHandler<any, any> = async (event) => {
+export const handler: AppSyncResolverHandler<any, any> = wrapper(async (event: any) => {
   console.log('event', event);
 
   const { name, page } = event.arguments;
@@ -23,4 +24,4 @@ export const handler: AppSyncResolverHandler<any, any> = async (event) => {
     previous,
     people: results,
   }
-}
+})
