@@ -17,6 +17,10 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  stackTags:
+    stack: ${self:service}
+  tags:
+    stack: ${self:service}
   stage: dev
   region: us-east-1
   environment:
