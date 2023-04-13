@@ -15,4 +15,25 @@ AWS serverless:
 CI/CD:
 * GitHub Actions
 
-> The frontend is in this [other repo](https://github.com/s4nt14go/star-wars-frontend) and this is the [demo link](https://prod--s4nt14go-star-wars.netlify.app)
+> The frontend is in this [other repo](https://github.com/s4nt14go/star-wars-frontend) and this is the [demo link](https://s4nt14go-star-wars.netlify.app)
+
+## Instructions
+
+Use Node 12 version as lambdas, using [nvm](https://github.com/nvm-sh/nvm) you can:
+
+```
+# set Node 12 in current terminal
+nvm use 12
+# set Node 12 as default (new terminals will use 12)
+nvm alias default 12
+```
+
+After setting your AWS credentials, install dependencies and deploy:
+
+```
+npm ci
+# deploy on dev stage
+npm run deploy:dev
+# ...to deploy on prod stage
+npm run deploy:prod
+```
