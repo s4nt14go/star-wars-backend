@@ -1,4 +1,4 @@
-name: star-wars-api-${self:custom.stage}
+name: star-wars-api
 schema: schema.api.graphql
 authenticationType: API_KEY
 mappingTemplates:
