@@ -24,7 +24,8 @@ runs:
       shell: bash
       run: npm ci
 
-    - name: set creds
+    - name: set credentials
+      shell: bash
       run: |
         export AWS_REGION=us-east-1
         export AWS_ACCESS_KEY_ID=${{ inputs.AWS_ACCESS_KEY_ID }}
