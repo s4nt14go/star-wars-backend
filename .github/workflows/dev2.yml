@@ -13,6 +13,7 @@ jobs:
       DEPLOYMENT_ACCOUNT: ${{ secrets.DEV_ACCOUNT_ID }}
 
     steps:
+      - uses: actions/checkout
       - uses: ./.github/local-actions/action.yml@main
       - name: deploy to dev
         run: |
