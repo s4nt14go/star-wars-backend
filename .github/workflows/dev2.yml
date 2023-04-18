@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/local-actions/action
+      - uses: ./.github/workflows/action.yml
       - name: deploy to dev
         run: |
           npm run deploy:dev
