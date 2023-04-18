@@ -16,7 +16,8 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
-      - uses: ./.github/local-actions/action-dir
+      - uses: actions/checkout@v3
+      - uses: ./.github/common/install.yml
       - name: deploy to dev
         run: |
           CREDS=`aws sts assume-role --role-arn arn:aws:iam::$DEPLOYMENT_ACCOUNT:role/ci-role --role-session-name=ci_user`

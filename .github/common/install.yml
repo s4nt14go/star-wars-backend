@@ -1,4 +1,4 @@
-name: local action
+name: install
 
 runs:
   using: "composite"
