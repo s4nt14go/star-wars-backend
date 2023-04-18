@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/workflows/action.yml
+      - uses: ./.github/workflows/action.yaml
       - name: deploy to dev
         run: |
           npm run deploy:dev
