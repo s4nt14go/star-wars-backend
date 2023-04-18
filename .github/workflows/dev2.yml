@@ -1,4 +1,4 @@
-name: deploy dev
+name: deploy dev2
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       DEPLOYMENT_ACCOUNT: ${{ secrets.DEV_ACCOUNT_ID }}
 
     steps:
-      - uses: ./.github/local-actions/action@main
+      - uses: ./.github/local-actions/action.yml@main
       - name: deploy to dev
         run: |
           npm run deploy:dev
