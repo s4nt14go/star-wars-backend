@@ -12,9 +12,11 @@ runs:
         node-version: '12'
 
     - name: npm ci
+      shell: bash
       run: npm ci
 
     - name: set credentials for deployment
+      shell: bash
       run: |
         CREDS=`aws sts assume-role --role-arn arn:aws:iam::$DEPLOYMENT_ACCOUNT:role/ci-role --role-session-name=ci_user`
         export AWS_ACCESS_KEY_ID=`echo $CREDS | jq -r '.Credentials.AccessKeyId'`
