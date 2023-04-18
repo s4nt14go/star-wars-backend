@@ -12,23 +12,15 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      DEPLOYMENT_ACCOUNT: ${{ secrets.PROD_ACCOUNT_ID }}
       AWS_REGION: us-east-1
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-
-      - name: npm ci
-        run: npm ci
-
+      - uses: actions/checkout@v3
+      - uses: ./.github/common/install
       - name: deploy to prod
         run: |
-          CREDS=`aws sts assume-role --role-arn arn:aws:iam::${{ secrets.DEV_ACCOUNT_ID }}:role/ci-role --role-session-name=ci_user`
+          CREDS=`aws sts assume-role --role-arn arn:aws:iam::$DEPLOYMENT_ACCOUNT:role/ci-role --role-session-name=ci_user`
           export AWS_ACCESS_KEY_ID=`echo $CREDS | jq -r '.Credentials.AccessKeyId'`
           export AWS_SECRET_ACCESS_KEY=`echo $CREDS | jq -r '.Credentials.SecretAccessKey'`
           export AWS_SESSION_TOKEN=`echo $CREDS | jq -r '.Credentials.SessionToken'`
