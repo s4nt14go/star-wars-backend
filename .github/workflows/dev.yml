@@ -1,4 +1,4 @@
-name: deploy dev2
+name: deploy dev
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/common/install.yml
+      - uses: ./.github/common/install
       - name: deploy to dev
         run: |
           CREDS=`aws sts assume-role --role-arn arn:aws:iam::$DEPLOYMENT_ACCOUNT:role/ci-role --role-session-name=ci_user`
