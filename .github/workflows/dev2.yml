@@ -16,7 +16,6 @@ jobs:
       AWS_REGION: us-east-1
 
     steps:
-      - uses: actions/checkout@v3
       - uses: ./.github/local-actions/action-dir
       - name: deploy to dev
         run: |
